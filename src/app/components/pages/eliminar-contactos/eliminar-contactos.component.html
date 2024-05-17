@@ -1,0 +1,26 @@
+<div class="home-div-container">
+  <app-layout-header />
+  <main>
+    <div class="contact-container">
+      <div
+        *ngFor="let contact of contacts"
+        class="contact-card"
+        (click)="deleteContactClick(contact.id)"
+      >
+        <div class="contact-header">
+          <h2>{{ contact.name }} - id: {{ contact.id }}</h2>
+          <h4>{{ contact.email }}</h4>
+          <h5></h5>
+        </div>
+        <div class="contact-info">
+          <p><b>Phone:</b> {{ contact.phone }}</p>
+          <p><b>Address:</b> {{ contact.address }}</p>
+        </div>
+        <div class="contact-footer">
+          <small>Created: {{ contact.created_at | date : "medium" }}</small>
+        </div>
+      </div>
+    </div>
+  </main>
+  <app-layout-footer />
+</div>
